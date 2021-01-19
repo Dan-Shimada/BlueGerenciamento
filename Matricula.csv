@@ -2,3 +2,4 @@ Cod;Cursos;Horario;id_Aluno;Pagamento;P1;P2;P3;P4;Media;Situacao
 curso03;Avancado;Manha;1;Pago;8;9;9;9;8.75;Aprovado
 curso02;Intermediario;Tarde;2;Em debito;7;8;6;7;7.0;Aprovado
 curso01;Basico;Tarde;3;Pago;6;5;5;5;5.25;Reprovado
+curso01;Basico;Tarde;4;Pago;7.8;8.0;8.5;8.0;8.075;Aprovado

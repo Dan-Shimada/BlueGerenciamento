@@ -1,4 +1,7 @@
-id;Nome;Nome_completo;Endereco;Numero;Cidade;Estado;Data_Nascimento;Nome_Responsavel
-1;Dan;Dan Shimada;Avenida Clara Gianoti de Souza;1413;Registro;SP;22/06/1992;Katia
-2;Micaela;Micaela Sasaki;Rua Sao Bento;67;Registro;SP;13/03/1992;Gerson
-3;Takeo;Takeo Nazakawa;Rua dos Sabias;10;Registro;SP;07/07/1992;Carioca
+;id;Nome;Nome_completo;Endereco;Numero;Cidade;Estado;Data_Nascimento;Nome_Responsavel
+0;1.0;Dan;Dan Shimada;Avenida Clara Gianoti de Souza;1413.0;Registro;SP;22/06/1992;Katia
+1;2.0;Micaela;Micaela Sasaki;Rua Sao Bento;67.0;Registro;SP;13/03/1992;Gerson
+2;3.0;Takeo;Takeo Nazakawa;Rua dos Sabias;10.0;Registro;SP;07/07/1992;Carioca
+3;4.0;Suelen;Suelen Machado;Rua das Azaleias;26.0;Registro;SP;18/03/1999;Marcos
+4;5.0;Margarete;Margarete pereira;Avenida estados unidos;45.0;Registro;SP;14/04/1980;Claudete
+6;6.0;Camila;Camila Soares;Rua tiradentes;70.0;Juquia;SP;18/08/2002;Rafael

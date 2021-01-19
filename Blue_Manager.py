@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 
+
 def main():
     cond = True
     while cond:
@@ -18,6 +19,7 @@ def main():
         print('| 8 - Sair                          |') #OK
         print('|___________________________________|')
         opc = int(input('Escolha uma opcao: '))
+
 # CRIAR ARQUIVOS
         if opc == 1:
             print(' ----------------------------------- ')
@@ -102,31 +104,42 @@ def main():
             lista_data_Nascimento_aux = []
             lista_nome_Responsavel_aux = []
 
+            nomeCompleto_aux = []
+
             id_aluno = int(input('ID: '))
             lista_id_aluno_aux.append(id_aluno)
 
-            primeiro_nome = input('Primeiro Nome: ')
+            primeiro_nome = input('Primeiro Nome: ').capitalize()
             lista_nome_aux.append(primeiro_nome)
 
             nomeCompleto = input('Nome Completo: ')
             lista_nome_completo_aux.append(nomeCompleto)
 
-            rua = input('Endereco: ')
+            for x in lista_nome_completo_aux:
+                separa = x.split(' ')
+                for y in separa:
+                    maiuscula = y.capitalize()
+                    a = nomeCompleto_aux.append(maiuscula)
+            junta = ' '.join(nomeCompleto_aux)
+            lista_nome_completo_aux.pop()
+            lista_nome_completo_aux.append(junta)
+
+            rua = input('Endereco: ').capitalize()
             lista_endereco_aux.append(rua)
 
             numero = int(input('Numero: '))
             lista_numero_aux.append(numero)
 
-            cidade = input('Cidade: ')
+            cidade = input('Cidade: ').capitalize()
             lista_cidade_aux.append(cidade)
 
-            estado = input('Estado: ')
+            estado = input('Estado(SSP): ').upper()
             lista_estado_aux.append(estado)
 
-            data_Nascimento = input('Data de Nascimento: ')
+            data_Nascimento = input('Data de Nascimento(dd/mm/yyyy): ')
             lista_data_Nascimento_aux.append(data_Nascimento)
 
-            nome_Responsavel = input('Nome do responsavel: ')
+            nome_Responsavel = input('Nome do responsavel: ').capitalize()
             lista_nome_Responsavel_aux.append(nome_Responsavel)
 
             #dados_alunos = list(zip(lista_id_aluno, lista_nome, lista_nome_completo, lista_rua, lista_numero, lista_cidade, lista_estado, lista_data_Nascimento, lista_nome_Responsavel))
@@ -182,13 +195,13 @@ def main():
             lista_Cursos_aux.append(curso_mat)
             print('Curso: {}'.format(curso_mat))
 
-            horario_mat = input('Periodo: ')
+            horario_mat = input('Periodo: ').capitalize()
             lista_Horario_aux.append(horario_mat)
 
             id_aluno_mat = int(input('ID aluno: '))
             lista_id_Aluno_aux.append(id_aluno_mat)
 
-            pagamento_mat = input('Pagamento/Em Debito: ')
+            pagamento_mat = input('Pago/Em Debito: ').capitalize()
             lista_Pagamento_aux.append(pagamento_mat)
 
             p1_mat = float(input('P1: '))
@@ -203,18 +216,18 @@ def main():
             p4_mat = float(input('P4: '))
             lista_P4_aux.append(p4_mat)
 
-            if p1_mat == 0 & p2_mat == 0 & p3_mat & p4_mat == 0:
-                media_mat = 0
+            if p1_mat == 0.0 and p2_mat == 0.0 and p3_mat == 0.0 and p4_mat == 0.0:
+                media_mat = 0.0
                 situacao_mat = 'Reprovado'
             else:
-                media_mat = (p1_mat + p2_mat + p3_mat + p4_mat) / 4
+                media_mat = (p1_mat + p2_mat + p3_mat + p4_mat) / 4.0
 
             lista_Media_aux.append(media_mat)
-            print('Media: {}'.format(media_mat))
+            print('Media: {:.2f}'.format(media_mat))
 
-            if media_mat >= 7:
+            if media_mat >= 7.0:
                 situacao_mat = 'Aprovado'
-            elif media_mat < 7:
+            elif media_mat < 7.0:
                 situacao_mat = 'Reprovado'
 
             lista_Situacao_aux.append(situacao_mat)

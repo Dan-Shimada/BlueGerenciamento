@@ -15,8 +15,24 @@ tir do uso de pandas/numpy e outras bibliotecas
 	. Adicionado opcao de listar alunos
 	(Corrigido o parse que ocorria devido ao valor None 
 	no atributo sep)
-	
 
+- 19/01/2021
+	. Tratamento dos arrays
+	(A primeira letra das palavras dos campos primeiro
+	nome, nome completo, endereço, cidade, estado,	nome 
+	do responsável, periodo e pago/em debito serão sempre 
+	salvos como maíuscula)
+	
+- 20/01/2021
+	. Alterado o nome do id_Aluno para id da tabela 
+	Matricula.csv, possibilitando realizar merge com o id
+	da tabela Alunos.csv
+	. Alterado a 'interface' do menu principal
+	. Criado o cabecalho das opcoes para uma maior clareza
+	. Adicionado opção de listar alunos aprovados/reprovados
+	(colunas: id, nome_completo, cursos, media e situacao)
+	. Adicionado opcao de excluir alunos
+	
 ------------------------ OBSERVA?OES ------------------------
 
 - Ha um outro programa que permite alimentar corretamente as 

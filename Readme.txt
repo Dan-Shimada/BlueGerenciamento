@@ -32,6 +32,17 @@ tir do uso de pandas/numpy e outras bibliotecas
 	. Adicionado opção de listar alunos aprovados/reprovados
 	(colunas: id, nome_completo, cursos, media e situacao)
 	. Adicionado opcao de excluir alunos
+
+- 24/01/2021	
+	. Refatoração do código
+		. Criado as funções
+			. cabecalho_matricula()
+			. cabecalho_aluno()
+			. maiuscula()
+			. criar_dataframe_aluno()
+			. criar_dataframe_matricula()
+			. aprovado_reprovado()
+	. Corrigido bug na opção excluir
 	
 ------------------------ OBSERVA?OES ------------------------
 

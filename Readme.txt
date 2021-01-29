@@ -1,9 +1,9 @@
------------------------- OBJETIVO ------------------------
+------------------------------ OBJETIVO ------------------------------
 
 Alimentar as planilhas presente no projeto Blue_BI a par-
 tir do uso de pandas/numpy e outras bibliotecas
 
------------------------- UPDATES ------------------------
+------------------------------ UPDATES ------------------------------
 
 - 17/01/2021
 	. Adicionado opcao de criar planilhas 
@@ -43,9 +43,16 @@ tir do uso de pandas/numpy e outras bibliotecas
 			. criar_dataframe_matricula()
 			. aprovado_reprovado()
 	. Corrigido bug na opção excluir
-	
------------------------- OBSERVA?OES ------------------------
 
-- Ha um outro programa que permite alimentar corretamente as 
-planilhas (Blue_Cadastro_Aluno) usando somente a lib csv
+- 25/01/2021
+	. Opção de alterar as notas P1, P2, P3 e P4 foram implementadas
+	(ao alterar uma das notas, a coluna de Media e Situacao são
+	alterados automaticamente)
+	. Opção de alterar a situacao de pagamento foi implementado
+	
+- 26/01/2021
+	. Alterado o path dos arquivos para a pasta do Blue - Power BI
+	
+------------------------------ OBSERVACOES ------------------------------
+
 

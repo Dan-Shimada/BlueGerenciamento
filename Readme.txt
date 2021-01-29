@@ -53,6 +53,9 @@ tir do uso de pandas/numpy e outras bibliotecas
 - 26/01/2021
 	. Alterado o path dos arquivos para a pasta do Blue - Power BI
 	
+- 29/01/2021
+	. Simplificação do menu principal
+	
 ------------------------------ OBSERVACOES ------------------------------
 
 

@@ -55,6 +55,15 @@ tir do uso de pandas/numpy e outras bibliotecas
 	
 - 29/01/2021
 	. Simplificação do menu principal
+	. Adicionado coluna parcela na planilha Alunos
+	
+- 01/02/2021
+	. Adicionado opção para criar planilha Financa
+	. Adicionado opção para cadastrar dados da Financa
+	. Adicionado opção para listar os dados da Financa
+	. Adicionado opção para alterar os dados da Financa
+	. Ao excluir um aluno, excluirá todos os dados desse aluno nas
+	planilhas Aluno, Escola, Cursos_Alunos e Financa
 	
 ------------------------------ OBSERVACOES ------------------------------
 

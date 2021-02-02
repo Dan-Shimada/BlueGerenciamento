@@ -1,46 +1,5 @@
 import pandas as pd
-import numpy as np
-
-def cabecalho_escola():
-    lista_escolas = []
-    lista_id_escola = []
-
-    cabecalho_escola = {
-        'ID_escola': lista_id_escola,
-        'Escola': lista_escolas
-    }
-
-    df_cabecalho_escola = pd.DataFrame(cabecalho_escola)
-    df_cabecalho_escola.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Escola.csv', header=True, index=False, sep=';')
-
-def cabecalho_matricula():
-    lista_Cod = []
-    lista_Cursos = []
-    lista_Horario = []
-    lista_id_Aluno = []
-    lista_Pagamento = []
-    lista_P1 = []
-    lista_P2 = []
-    lista_P3 = []
-    lista_P4 = []
-    lista_Media = []
-    lista_Situacao = []
-
-    cabecalho_Curso_Alunos = {
-        'Cod': lista_Cod,
-        'Cursos': lista_Cursos,
-        'Horario': lista_Horario,
-        'id': lista_id_Aluno,
-        'Pagamento': lista_Pagamento,
-        'P1': lista_P1,
-        'P2': lista_P2,
-        'P3': lista_P3,
-        'P4': lista_P4,
-        'Media': lista_Media,
-        'Situacao': lista_Situacao,
-    }
-    df_cabecalho_Cursos_Alunos = pd.DataFrame(cabecalho_Curso_Alunos)
-    df_cabecalho_Cursos_Alunos.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Cursos_Alunos.csv', header=True, index=False, sep=';')
+import locale
 
 def cabecalho_aluno():
     lista_id_aluno = []
@@ -64,10 +23,67 @@ def cabecalho_aluno():
         'Estado': lista_estado,
         'Data_Nascimento': lista_data_Nascimento,
         'Nome_Responsavel': lista_nome_Responsavel,
-        'Parcela': lista_Parcelas
     }
     df_cabecalho_Alunos = pd.DataFrame(cabecalho_Alunos)
     df_cabecalho_Alunos.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Alunos.csv', header=True, index=False, sep=';')
+
+def cabecalho_matricula():
+    lista_Cod = []
+    lista_Cursos = []
+    lista_Horario = []
+    lista_id_Aluno = []
+    lista_Pagamento = []
+    lista_P1 = []
+    lista_P2 = []
+    lista_P3 = []
+    lista_P4 = []
+    lista_Media = []
+    lista_Situacao = []
+
+    cabecalho_Curso_Alunos = {
+        'Cod': lista_Cod,
+        'Cursos': lista_Cursos,
+        'Horario': lista_Horario,
+        'id': lista_id_Aluno,
+        'P1': lista_P1,
+        'P2': lista_P2,
+        'P3': lista_P3,
+        'P4': lista_P4,
+        'Media': lista_Media,
+        'Situacao': lista_Situacao,
+    }
+    df_cabecalho_Cursos_Alunos = pd.DataFrame(cabecalho_Curso_Alunos)
+    df_cabecalho_Cursos_Alunos.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Cursos_Alunos.csv', header=True, index=False, sep=';')
+
+def cabecalho_escola():
+    lista_escolas = []
+    lista_id_escola = []
+
+    cabecalho_escola = {
+        'ID_escola': lista_id_escola,
+        'Escola': lista_escolas
+    }
+
+    df_cabecalho_escola = pd.DataFrame(cabecalho_escola)
+    df_cabecalho_escola.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Escola.csv', header=True, index=False, sep=';')
+
+def cabecalho_financa():
+    lista_id_financa = []
+    lista_formaPag = []
+    lista_statusPag = []
+    lista_vencimento = []
+    lista_parcela = []
+
+    cabecalho_financa = {
+        'ID_financa': lista_id_financa,
+        'FormaPagamento': lista_formaPag,
+        'StatusPagamento': lista_statusPag,
+        'DiaVencimento':lista_vencimento,
+        'Parcela':lista_parcela
+    }
+
+    df_cabecalho_financas = pd.DataFrame(cabecalho_financa)
+    df_cabecalho_financas.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Financa.csv', header=True, index=False, sep=';')
 
 def maiuscula(lista):
     lista_aux = []
@@ -82,17 +98,22 @@ def maiuscula(lista):
 
 def criar_dataframe_aluno(dicio_alvo):
     df = pd.DataFrame(dicio_alvo)
-    df.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Alunos.csv', header=False, index=False, sep=';', mode='a')
+    df.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Alunos.csv', header=False, index=False, sep=';', mode='a', decimal=',')
 
 def criar_dataframe_matricula(dicio_alvo):
     df = pd.DataFrame(dicio_alvo)
-    df.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Cursos_Alunos.csv', header=False, index=False, sep=';', mode='a')
+    df.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Cursos_Alunos.csv', header=False, index=False, sep=';', mode='a', decimal=',')
 
 def criar_dataframe_escola(dicio_alvo):
     df = pd.DataFrame(dicio_alvo)
-    df.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Escola.csv', header=False, index=False, sep=';', mode='a')
+    df.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Escola.csv', header=False, index=False, sep=';', mode='a', decimal=',')
+
+def criar_dataframe_financa(dicio_alvo):
+    df = pd.DataFrame(dicio_alvo)
+    df.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Financa.csv', header=False, index=False, sep=';', mode='a', decimal=',')
 
 def main():
+    locale.setlocale(locale.LC_ALL, 'pt_BR')
     cond = True
     while cond:
 
@@ -105,6 +126,7 @@ def main():
         print('| 4 - Excluir aluno                                                         |')
         print('| 5 - Alterar dados                                                         |')
         print('| 6 - Sair                                                                  |')
+        print('| 7 - Calculo                                                               |')
         print('+---------------------------------------------------------------------------+')
         opc = int(input('Escolha uma opcao: '))
         print('')
@@ -117,6 +139,7 @@ def main():
             print('| 1 - Planilha Alunos                                                 |')
             print('| 2 - Planilha Matricula                                              |')
             print('| 3 - Planilha Escola                                                 |')
+            print('| 4 - Planilha Financa                                                |')
             print('+---------------------------------------------------------------------+')
             opc_plan = int(input('Escolha uma opcao: '))
             print('')
@@ -142,6 +165,12 @@ def main():
                 print('Planilha Escola criada')
                 print(' ====================================================================== ', end='\n\n')
 
+# CADASTRAR CABECALHO DE FINANCAS
+            if opc_plan == 4:
+                cabecalho_financa()
+
+                print('Planilha Financa criada')
+                print(' ====================================================================== ', end='\n\n')
 
 # ######################################################### CADASTRO #########################################################
 
@@ -153,6 +182,7 @@ def main():
             print('| 1 - Alunos                                                          |')
             print('| 2 - Matricula                                                       |')
             print('| 3 - Escola                                                          |')
+            print('| 4 - Financa                                                         |')
             print('+---------------------------------------------------------------------+')
             opc_cadastro = int(input('Escolha uma opcao: '))
 
@@ -171,7 +201,6 @@ def main():
                 lista_estado_aux = []
                 lista_data_Nascimento_aux = []
                 lista_nome_Responsavel_aux = []
-                lista_Parcelas_aux = []
 
                 id_aluno = int(input('ID: '))
                 lista_id_aluno_aux.append(id_aluno)
@@ -204,9 +233,6 @@ def main():
                 lista_nome_Responsavel_aux.append(nome_Responsavel)
                 maiuscula(lista_nome_Responsavel_aux)
 
-                valor_parcela = float(input('Valor da parcela: '))
-                lista_Parcelas_aux.append(valor_parcela)
-
                 aluno = {
                     'id': lista_id_aluno_aux,
                     'Nome': lista_nome_aux,
@@ -216,8 +242,7 @@ def main():
                     'Cidade': lista_cidade_aux,
                     'Estado': lista_estado_aux,
                     'Data_Nascimento': lista_data_Nascimento_aux,
-                    'Nome_Responsavel': lista_nome_Responsavel_aux,
-                    'Parcela': lista_Parcelas_aux
+                    'Nome_Responsavel': lista_nome_Responsavel_aux
                 }
 
                 criar_dataframe_aluno(aluno)
@@ -241,7 +266,6 @@ def main():
                 lista_Cursos_aux = []
                 lista_Horario_aux = []
                 lista_id_Aluno_aux = []
-                lista_Pagamento_aux = []
                 lista_P1_aux = []
                 lista_P2_aux = []
                 lista_P3_aux = []
@@ -266,10 +290,6 @@ def main():
 
                 id_aluno_mat = int(input('ID aluno: '))
                 lista_id_Aluno_aux.append(id_aluno_mat)
-
-                pagamento_mat = input('Pago/Em Debito: ').capitalize()
-                lista_Pagamento_aux.append(pagamento_mat)
-                maiuscula(lista_Pagamento_aux)
 
                 p1_mat = float(input('P1: '))
                 lista_P1_aux.append(p1_mat)
@@ -306,7 +326,6 @@ def main():
                     'Cursos': lista_Cursos_aux,
                     'Horario': lista_Horario_aux,
                     'id_Aluno': lista_id_Aluno_aux,
-                    'Pagamento': lista_Pagamento_aux,
                     'P1': lista_P1_aux,
                     'P2': lista_P2_aux,
                     'P3': lista_P3_aux,
@@ -322,7 +341,7 @@ def main():
                 print(' ====================================================================== ', end='\n\n')
 
 # CADASTRAR ESCOLAS
-            if opc_cadastro == 4:
+            if opc_cadastro == 3:
                 print('+---------------------------------------------------------------------+')
                 print('|                CADASTRO DE ESCOLA QUE O ALUNO ESTUDA                |')
                 print('+---------------------------------------------------------------------+', end='\n\n')
@@ -347,6 +366,47 @@ def main():
                 print('Escola {} criada'.format(nome_escola))
                 print(' ====================================================================== ', end='\n\n')
 
+# CADASTRAR FINANCA
+            if opc_cadastro == 4:
+                print('+---------------------------------------------------------------------+')
+                print('|                           CADASTRO FINANCEIRO                       |')
+                print('+---------------------------------------------------------------------+', end='\n\n')
+
+                lista_id_financa_aux = []
+                lista_formaPag_aux = []
+                lista_statusPag_aux = []
+                lista_vencimento_aux = []
+                lista_parcela_aux = []
+
+                financa = {
+                    'ID_financa': lista_id_financa_aux,
+                    'FormaPagamento': lista_formaPag_aux,
+                    'StatusPagamento': lista_statusPag_aux,
+                    'DiaVencimento': lista_vencimento_aux,
+                    'Parcela': lista_parcela_aux
+                }
+
+                id_financa = int(input('ID: '))
+                lista_id_financa_aux.append(id_financa)
+
+                forma_pag = input('Forma de pagamento: ').capitalize()
+                lista_formaPag_aux.append(forma_pag)
+
+                status_pag = input('Status(Pago/Em debito): ')
+                lista_statusPag_aux.append(status_pag)
+                maiuscula(lista_statusPag_aux)
+
+                dia_venc = int(input('Dia do vencimento: '))
+                lista_vencimento_aux.append(dia_venc)
+
+                parcela = float(input('Valor da parcela: '))
+                lista_parcela_aux.append(parcela)
+
+                criar_dataframe_financa(financa)
+
+                print('')
+                print('Situacao financeira do aluno, de ID={} foi criada'.format(id_financa))
+                print(' ====================================================================== ', end='\n\n')
 
 # ######################################################### LISTAR INFORMACOES #########################################################
 
@@ -412,12 +472,28 @@ def main():
 
             lista_del_index = []
 
-            df = pd.read_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Alunos.csv', sep=None, engine='python')
+            df1 = pd.read_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Alunos.csv', sep=None, engine='python')
+            df2 = pd.read_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Cursos_Alunos.csv', sep=None, engine='python')
+            df3 = pd.read_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Financa.csv', sep=None, engine='python')
+            df4 = pd.read_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Escola.csv', sep=None, engine='python')
+
             deletar_aluno_index = int(input('Escreva o index do aluno a ser deletado: '))
             lista_del_index.append(deletar_aluno_index)
-            dropa_linha = df.drop(lista_del_index[0], inplace=True)
-            reseta_index = df.reset_index(drop=True, inplace=True)
-            df.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Alunos.csv', sep=';')
+
+            dropa_linha1 = df1.drop(lista_del_index[0], inplace=True)
+            dropa_linha2 = df2.drop(lista_del_index[0], inplace=True)
+            dropa_linha3 = df3.drop(lista_del_index[0], inplace=True)
+            dropa_linha4 = df4.drop(lista_del_index[0], inplace=True)
+
+            reseta_index1 = df1.reset_index(drop=True, inplace=True)
+            reseta_index2 = df2.reset_index(drop=True, inplace=True)
+            reseta_index3 = df3.reset_index(drop=True, inplace=True)
+            reseta_index4 = df4.reset_index(drop=True, inplace=True)
+
+            df1.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Alunos.csv', sep=';')
+            df2.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Cursos_Alunos.csv', sep=';')
+            df3.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Financa.csv', sep=';')
+            df4.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Escola.csv', sep=';')
 
             print('Aluno deletado')
             print(' ====================================================================== ', end='\n\n')
@@ -431,7 +507,7 @@ def main():
             print('|                          ALTERAR INFORMACOES                        |')
             print('+---------------------------------------------------------------------+')
             print('| 1 - Notas                                                           |')
-            print('| 2 - Matricula                                                       |')
+            print('| 2 - Pagamento                                                       |')
             print('+---------------------------------------------------------------------+')
             opc_alterar = int(input('Escolha uma opcao: '))
 
@@ -467,20 +543,20 @@ def main():
                     p1_novo = float(input('P1: '))
 
                     df.loc[indice, p1_col] = p1_novo
-                    nota_p2 = df.loc[indice, p2_col]
-                    nota_p3 = df.loc[indice, p3_col]
-                    nota_p4 = df.loc[indice, p4_col]
+                    nota_p2 = float(df.loc[indice, p2_col])
+                    nota_p3 = float(df.loc[indice, p3_col])
+                    nota_p4 = float(df.loc[indice, p4_col])
                     situacao_atual = df.loc[indice, situacao_col]
 
                     nova_media = (p1_novo + nota_p2 + nota_p3 + nota_p4) / 4
                     df.loc[indice, media_col] = nova_media
 
                     if nova_media >= 7:
-                        df.loc[indice, situacao_col] = 'Aprovado'
+                        df.loc[indice, situacao_col] = 'APROVADO'
                     elif nova_media < 7:
-                        df.loc[indice, situacao_col] = 'Reprovado'
+                        df.loc[indice, situacao_col] = 'REPROVADO'
 
-                    df.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Cursos_Alunos.csv', sep=';', index=False)
+                    df.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Cursos_Alunos.csv', sep=';', index=False, decimal=',')
 
                     print('Nota P1 do aluno de ID={} foi alterado para {}'.format(indice+1, p1_novo))
                     print(' ====================================================================== ', end='\n\n')
@@ -502,21 +578,21 @@ def main():
                     indice = int(input('indice:'))
                     p2_novo = float(input('P2: '))
 
-                    nota_p1 = df.loc[indice, p1_col]
+                    nota_p1 = float(df.loc[indice, p1_col])
                     df.loc[indice, p2_col] = p2_novo
-                    nota_p3 = df.loc[indice, p3_col]
-                    nota_p4 = df.loc[indice, p4_col]
+                    nota_p3 = float(df.loc[indice, p3_col])
+                    nota_p4 = float(df.loc[indice, p4_col])
                     situacao_atual = df.loc[indice, situacao_col]
 
                     nova_media = (nota_p1 + p2_novo + nota_p3 + nota_p4) / 4
                     df.loc[indice, media_col] = nova_media
 
                     if nova_media >= 7:
-                        df.loc[indice, situacao_col] = 'Aprovado'
+                        df.loc[indice, situacao_col] = 'APROVADO'
                     elif nova_media < 7:
-                        df.loc[indice, situacao_col] = 'Reprovado'
+                        df.loc[indice, situacao_col] = 'REPROVADO'
 
-                    df.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Cursos_Alunos.csv', sep=';', index=False)
+                    df.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Cursos_Alunos.csv', sep=';', index=False, decimal=',')
 
                     print('Nota P2 do aluno de ID={} foi alterado para {}'.format(indice+1, p2_novo))
                     print(' ====================================================================== ', end='\n\n')
@@ -538,21 +614,21 @@ def main():
                     indice = int(input('indice:'))
                     p3_novo = float(input('P3: '))
 
-                    nota_p1 = df.loc[indice, p1_col]
-                    nota_p2 = df.loc[indice, p2_col]
+                    nota_p1 = float(df.loc[indice, p1_col])
+                    nota_p2 = float(df.loc[indice, p2_col])
                     df.loc[indice, p3_col] = p3_novo
-                    nota_p4 = df.loc[indice, p4_col]
+                    nota_p4 = float(df.loc[indice, p4_col])
                     situacao_atual = df.loc[indice, situacao_col]
 
                     nova_media = (nota_p1 + nota_p2 + p3_novo + nota_p4) / 4
                     df.loc[indice, media_col] = nova_media
 
                     if nova_media >= 7:
-                        df.loc[indice, situacao_col] = 'Aprovado'
+                        df.loc[indice, situacao_col] = 'APROVADO'
                     elif nova_media < 7:
-                        df.loc[indice, situacao_col] = 'Reprovado'
+                        df.loc[indice, situacao_col] = 'REPROVADO'
 
-                    df.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Cursos_Alunos.csv', sep=';', index=False)
+                    df.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Cursos_Alunos.csv', sep=';', index=False, decimal=',')
 
                     print('Nota P3 do aluno de ID={} foi alterado para {}'.format(indice+1, p3_novo))
                     print(' ====================================================================== ', end='\n\n')
@@ -574,16 +650,21 @@ def main():
                     indice = int(input('indice:'))
                     p4_novo = float(input('P4: '))
 
-                    nota_p1 = df.loc[indice, p1_col]
-                    nota_p2 = df.loc[indice, p2_col]
-                    nota_p3 = df.loc[indice, p3_col]
+                    nota_p1 = float(df.loc[indice, p1_col])
+                    nota_p2 = float(df.loc[indice, p2_col])
+                    nota_p3 = float(df.loc[indice, p3_col])
                     df.loc[indice, p4_col] = p4_novo
                     situacao_atual = df.loc[indice, situacao_col]
 
                     nova_media = (nota_p1 + nota_p2 + nota_p3 + p4_novo) / 4
                     df.loc[indice, media_col] = nova_media
 
-                    df.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Cursos_Alunos.csv', sep=';', index=False)
+                    if nova_media >= 7:
+                        df.loc[indice, situacao_col] = 'APROVADO'
+                    elif nova_media < 7:
+                        df.loc[indice, situacao_col] = 'REPROVADO'
+
+                    df.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Cursos_Alunos.csv', sep=';', index=False, decimal=',')
 
                     print('Nota P4 do aluno de ID={} foi alterado para {}'.format(indice+1, p4_novo))
                     print(' ====================================================================== ', end='\n\n')
@@ -594,14 +675,13 @@ def main():
                 print('|                    ALTERAR SITUACAO DO PAGAMENTO                    |')
                 print('+---------------------------------------------------------------------+', end='\n\n')
 
-                df = pd.read_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Cursos_Alunos.csv', sep=None,
-                                 engine='python')
+                df = pd.read_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Financa.csv', sep=None, engine='python')
                 indice = int(input('indice:'))
                 pagamento_col = 'Pagamento'
                 pagamento_novo = input('Pagamento(Pago/Em Debito): ').capitalize()
 
                 df.loc[indice, pagamento_col] = pagamento_novo
-                df.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Cursos_Alunos.csv', sep=';', index=False)
+                df.to_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Financa.csv', sep=';', index=False)
 
                 print('')
                 print('Situacao do pagamento do aluno de ID={} foi alterado para {}'.format(indice + 1,
@@ -609,9 +689,14 @@ def main():
                 print(' ====================================================================== ', end='\n\n')
 
 # SAIR
-        if opc == 11:
+        if opc == 6:
             print('PROGRAMA FINALIZADO')
             break
 
+        if opc == 7:
+            df = pd.read_csv('C:\\Users\\Dan\\Desktop\\Blue - Power Bi\\Cursos_Alunos.csv', sep=None, engine='python')
+            indice = int(input('indice:'))
+            pagamento_col = 'Pagamento'
+            print(df.loc[indice, pagamento_col])
 main()
 
